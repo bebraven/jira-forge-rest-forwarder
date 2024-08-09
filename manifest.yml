@@ -1,9 +1,9 @@
 modules:
   webtrigger:
     - key: jira-issue-creator
-      function: async
+      function: createJiraIssue
   function:
-    - key: async
+    - key: createJiraIssue
       handler: index.runAsync
 
 permissions:
