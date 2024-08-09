@@ -1,0 +1,17 @@
+modules:
+  webtrigger:
+    - key: jira-issue-creator
+      function: createJiraIssue
+  function:
+    - key: createJiraIssue
+      handler: index.runAsync
+
+permissions:
+  scopes:
+    - write:jira-work
+    - storage:app
+
+app:
+  runtime:
+    name: nodejs18.x
+  id: ari:cloud:ecosystem::app/df9424fc-7caa-444b-b151-dac67d0c3a3a
