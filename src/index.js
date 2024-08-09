@@ -26,7 +26,7 @@ const validateApiKey = (apiKey) => {
 };
 
 const createIssue = async (projectKey, summary, description, issueType) => {
-  const issue = await api.asApp().requestJira(route`/rest/api/3/issue`, {
+  const issue = await api.asApp().requestJira(route`/rest/api/2/issue`, {
     method: 'POST',
      headers: {
       'Content-Type': 'application/json'
@@ -37,21 +37,7 @@ const createIssue = async (projectKey, summary, description, issueType) => {
           key: projectKey
         },
         summary: summary,
-        description: {
-          type: "doc",
-          version: 1,
-          content: [
-            {
-              type: "paragraph",
-              content: [
-                {
-                  text: description,
-                  type: "text"
-                }
-              ]
-            }
-          ]
-        },
+        description: description,
         issuetype: {
           name: issueType
         }
